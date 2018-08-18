@@ -4,18 +4,54 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Karla|Patua+One" rel="stylesheet">
-    <title>CardGame|Contact</title>
   </head>
   <body>
     <div>
-       <a href= "index.html"> Info </a>
-       <a> Contact   </a>
+       <a class="center" href= "index.html"> Info </a>
+       <a class="center"> Contact   </a>
      </div>
 
 <div>
-  <h2><strong>Discord</strong></h2>
-<iframe src="https://discordapp.com/widget?id=477535822896300042&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+  <h2 style="text-align:center;"><strong>Discord</strong></h2>
+<p align="center"><iframe src="https://discordapp.com/widget?id=477535822896300042&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe></p>
   </div
 
   </body>
+    <script language=javascript>
+    var rev = "fwd";
+    function titlebar(val){
+        var msg  = "CardGame|Contact";
+        var res = " ";
+        var speed = 100;
+        var pos = val;
+        msg = "   |-"+msg+"-|";
+        var le = msg.length;
+        if(rev == "fwd"){
+            if(pos < le){
+                pos = pos+1;
+                scroll = msg.substr(0,pos);
+                document.title = scroll;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "bwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+        else {
+            if(pos > 0) {
+                pos = pos-1;
+                var ale = le-pos;
+                scrol = msg.substr(ale,le);
+                document.title = scrol;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "fwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+    }
+    titlebar(0);
+</script>
 </html>

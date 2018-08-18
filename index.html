@@ -4,13 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Karla|Patua+One" rel="stylesheet">
-    <title>CardGame|Info</title>
   </head>
   <body>
     <div>
       <div>
-         <a> Info </a>
-         <a href= "contact.html">Contact   </a>
+         <a class="center"> Info </a>
+         <a class="center" href= "contact.html">Contact   </a>
        </div>
     </div>
     <h1 style="text-align:center;"><strong>This is an information page for the CardGame we are working on.</strong></h1>
@@ -24,4 +23,41 @@
       <li style="text-align:center;"></li>
 
   </body>
+  <script language=javascript>
+    var rev = "fwd";
+    function titlebar(val){
+        var msg  = "CardGame|Info";
+        var res = " ";
+        var speed = 100;
+        var pos = val;
+        msg = "   |-"+msg+"-|";
+        var le = msg.length;
+        if(rev == "fwd"){
+            if(pos < le){
+                pos = pos+1;
+                scroll = msg.substr(0,pos);
+                document.title = scroll;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "bwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+        else {
+            if(pos > 0) {
+                pos = pos-1;
+                var ale = le-pos;
+                scrol = msg.substr(ale,le);
+                document.title = scrol;
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+            else {
+                rev = "fwd";
+                timer = window.setTimeout("titlebar("+pos+")",speed);
+            }
+        }
+    }
+    titlebar(0);
+</script>
 </html>

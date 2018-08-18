@@ -2,4 +2,4 @@
 website for the card game
 
 # Website
-The website is hosted at [dostapa.github.io/cardGamewebsite/](https://dostapa.github.io/cardGamewebsite/)
+The website is hosted at [trollmad3.github.io/cardGamewebsite/index.html](https://trollmad3.github.io/cardGamewebsite/index.html)
